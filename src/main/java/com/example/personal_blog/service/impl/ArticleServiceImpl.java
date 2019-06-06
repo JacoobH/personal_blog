@@ -43,4 +43,9 @@ public class ArticleServiceImpl implements IArticleService {
     public List<ArticleModel> getListByTagAndPage(int tid, int pageNo, int pageSize) {
         return ad.selectListByTagAndPage(tid,pageNo,pageSize);
     }
+
+    @Override
+    public List<String> getYearByTime() {
+        return ad.selectYearByTime();
+    }
 }

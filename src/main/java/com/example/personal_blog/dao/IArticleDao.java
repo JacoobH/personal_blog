@@ -14,4 +14,7 @@ public interface IArticleDao {
     void delete(ArticleModel am);
     List<ArticleModel> selectListByPage(@Param("pageNo") int pageNo, @Param("pageSize") int pageSize);
     List<ArticleModel> selectListByTagAndPage(@Param("tid") int tid, @Param("pageNo") int pageNo, @Param("pageSize") int pageSize);
+    //归档时间列表
+    List<String> selectYearByTime();
+//    List<ArticleModel> selectListByTimeAndPage(@Param("pageNo") int pageNo, @Param("pageSize") int pageSize);
 }

@@ -10,5 +10,6 @@ public interface IArticleService {
     void remove(ArticleModel am);
     List<ArticleModel> getListByPage(int pageNo, int pageSize);
     List<ArticleModel> getListByTagAndPage(int tid, int pageNo, int pageSize);
+    List<String> getYearByTime();
 
 }

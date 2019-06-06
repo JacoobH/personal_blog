@@ -49,5 +49,9 @@
         order by TIME DESC
         limit ${(pageNo-1)*pageSize},${pageSize};
     </select>
+
+    <select id="selectYearByTime" resultType="String">
+        select distinct year(TIME) year from article where TIME is not null;
+    </select>
 </mapper>
 

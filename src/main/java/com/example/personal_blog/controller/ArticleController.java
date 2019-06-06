@@ -42,4 +42,9 @@ public class ArticleController {
     public List<ArticleModel> getListByTagAndPage(int tid, int pageNo, int pageSize){
         return as.getListByTagAndPage(tid,pageNo,pageSize);
     }
+
+    @RequestMapping("/getYearByTime")
+    public List<String> getYearByTime(){
+        return as.getYearByTime();
+    }
 }
