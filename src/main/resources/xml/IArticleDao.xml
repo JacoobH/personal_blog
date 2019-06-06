@@ -39,12 +39,14 @@
 
     <select id="selectListByPage" resultMap="ArticleResultMap">
         select * from article
+        order by TIME DESC
         limit ${(pageNo-1)*pageSize},${pageSize};
     </select>
 
     <select id="selectListByTagAndPage" resultMap="ArticleResultMap">
         select article.* from article inner join article_tag on article.ID = article_tag.AID
         where TID = #{tid}
+        order by TIME DESC
         limit ${(pageNo-1)*pageSize},${pageSize};
     </select>
 </mapper>

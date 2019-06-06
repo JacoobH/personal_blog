@@ -42,6 +42,7 @@
         select c.*, a.* from comment c
         left join article a on c.ARTICLE_ID = a.ID
         where c.ARTICLE_ID = #{aid}
+        order by TIME DESC
         limit ${(pageNo-1)*pageSize},${pageSize};
     </select>
 </mapper>
