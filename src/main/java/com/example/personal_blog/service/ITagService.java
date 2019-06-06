@@ -10,4 +10,6 @@ public interface ITagService {
     boolean isExist(TagModel tm);
     void remove(TagModel tm);
     void modify(TagModel tm);
+
+    List<TagModel> getListByArticle(int aid);
 }

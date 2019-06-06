@@ -16,4 +16,7 @@ public interface ITagDao {
 
     void update(TagModel tm);
     void delete(TagModel tm);
+
+    //根据文章查找标签
+    List<TagModel> selectListByArticle(int aid);
 }

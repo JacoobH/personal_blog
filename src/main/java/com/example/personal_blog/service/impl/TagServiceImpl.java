@@ -51,4 +51,9 @@ public class TagServiceImpl implements ITagService {
     public void modify(TagModel tm) {
         td.update(tm);
     }
+
+    @Override
+    public List<TagModel> getListByArticle(int aid) {
+        return td.selectListByArticle(aid);
+    }
 }

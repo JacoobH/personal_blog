@@ -37,5 +37,10 @@
         select count(ID) from tag
         where ID = #{id};
     </select>
+
+    <select id="selectListByArticle" resultMap="TagResultMap">
+        select tag.* from tag inner join article_tag on tag.ID = article_tag.TID
+        where AID = #{aid};
+    </select>
 </mapper>
 

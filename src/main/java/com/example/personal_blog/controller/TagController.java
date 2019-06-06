@@ -37,4 +37,9 @@ public class TagController {
     public void remove(TagModel tm){
         ts.remove(tm);
     }
+
+    @RequestMapping("/getListByArticle")
+    public List<TagModel> getListByArticle(int aid){
+        return ts.getListByArticle(aid);
+    }
 }
