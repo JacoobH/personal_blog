@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.personal_blog.dao.ITagDao">
+    <!--resultMap里的id写返回结果集，以键值对得方式返回，type里写model得别名，映射类  -->
+    <resultMap id="TagResultMap" type="Tag">
+        <!-- 这里得id为主键 ,result为返回结果，property为model对应得字段别名，column表里得字段名 -->
+        <id property="id" column="ID"/>
+        <result property="tag" column="TAG"/>
+    </resultMap>
+
+
+    <!--parameterType：设置别名 useGeneratedKeys="true" keyProperty="no"表里自增 ，这里得设置方法-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into tag (TAG) values (#{tag});
+    </insert>
+
+
+    <insert id="insertTags" >
+        insert into article_tag (AID,TID) values
+        <foreach item="tm" collection="tms" separator=",">
+            (#{aid},#{tm.id})
+        </foreach>
+    </insert>
+
+    <update id="update">
+        update tag set TAG = #{tag} where ID = #{id};
+    </update>
+
+    <delete id="delete">
+        delete from tag where ID = #{id};
+    </delete>
+
+    <select id="isExist" resultType="int">
+        select count(ID) from tag
+        where ID = #{id};
+    </select>
+</mapper>
+
