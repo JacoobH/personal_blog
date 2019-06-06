@@ -11,5 +11,5 @@ public interface IArticleService {
     List<ArticleModel> getListByPage(int pageNo, int pageSize);
     List<ArticleModel> getListByTagAndPage(int tid, int pageNo, int pageSize);
     List<String> getYearByTime();
-
+    List<ArticleModel> getListByTimeAndPage(String year, int pageNo, int pageSize);
 }

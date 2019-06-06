@@ -53,5 +53,11 @@
     <select id="selectYearByTime" resultType="String">
         select distinct year(TIME) year from article where TIME is not null;
     </select>
+
+    <select id="selectListByTimeAndPage" resultMap="ArticleResultMap">
+        select * from article
+        where year(TIME) = #{year}
+        limit ${(pageNo-1)*pageSize},${pageSize};
+    </select>
 </mapper>
 

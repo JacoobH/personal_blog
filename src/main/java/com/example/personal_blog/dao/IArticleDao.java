@@ -16,5 +16,6 @@ public interface IArticleDao {
     List<ArticleModel> selectListByTagAndPage(@Param("tid") int tid, @Param("pageNo") int pageNo, @Param("pageSize") int pageSize);
     //归档时间列表
     List<String> selectYearByTime();
-//    List<ArticleModel> selectListByTimeAndPage(@Param("pageNo") int pageNo, @Param("pageSize") int pageSize);
+    //得到年内的文章列表
+    List<ArticleModel> selectListByTimeAndPage(@Param("year") String year,@Param("pageNo") int pageNo, @Param("pageSize") int pageSize);
 }

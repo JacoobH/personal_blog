@@ -47,4 +47,9 @@ public class ArticleController {
     public List<String> getYearByTime(){
         return as.getYearByTime();
     }
+
+    @RequestMapping("/getListByTimeAndPage")
+    public List<ArticleModel> getListByTimeAndPage(String year, int pageNo, int pageSize){
+        return as.getListByTimeAndPage(year,pageNo,pageSize);
+    }
 }
