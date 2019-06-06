@@ -23,18 +23,18 @@ public class ArticleController {
         as.add(am);
     }
 
-    @RequestMapping("/update")
-    public void update(ArticleModel am){
+    @RequestMapping("/modify")
+    public void modify(ArticleModel am){
         as.modify(am);
     }
 
-    @RequestMapping("/delete")
-    public void delete(ArticleModel am){
-        as.delete(am);
+    @RequestMapping("/remove")
+    public void remove(ArticleModel am){
+        as.remove(am);
     }
 
     @RequestMapping("/getListByPage")
-    public List<ArticleModel> getAllByPage(int pageNo, int pageSize){
+    public List<ArticleModel> getListByPage(int pageNo, int pageSize){
         return as.getListByPage(pageNo, pageSize);
     }
 }

@@ -30,12 +30,12 @@ public class ArticleServiceImpl implements IArticleService {
     }
 
     @Override
-    public void delete(ArticleModel am) {
+    public void remove(ArticleModel am) {
         ad.delete(am);
     }
 
     @Override
     public List<ArticleModel> getListByPage(int pageNo, int pageSize) {
-        return ad.getListByPage(pageNo,pageSize);
+        return ad.selectListByPage(pageNo,pageSize);
     }
 }

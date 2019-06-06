@@ -37,7 +37,7 @@
         where ID = #{id}
     </delete>
 
-    <select id="getListByPage" resultMap="ArticleResultMap">
+    <select id="selectListByPage" resultMap="ArticleResultMap">
         select * from article
         limit ${(pageNo-1)*pageSize},${pageSize};
     </select>

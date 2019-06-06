@@ -12,5 +12,5 @@ public interface IArticleDao {
     void insert(ArticleModel am);
     void update(ArticleModel am);
     void delete(ArticleModel am);
-    List<ArticleModel> getListByPage(@Param("pageNo") int pageNo, @Param("pageSize") int pageSize);
+    List<ArticleModel> selectListByPage(@Param("pageNo") int pageNo, @Param("pageSize") int pageSize);
 }
