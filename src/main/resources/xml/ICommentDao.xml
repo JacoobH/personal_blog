@@ -14,7 +14,7 @@
 
     <resultMap id="CommentWithArticleResultMap" type="Comment" extends="CommentResultMap">
         <!-- 这里得id为主键 ,result为返回结果，property为model对应得字段别名，column表里得字段名 -->
-        <association property="article" column="ARTICLE_ID" resultMap="com.example.personal_blog.dao.ArticleResultMap"/>
+        <association property="article" column="ARTICLE_ID" resultMap="com.example.personal_blog.dao.IArticleDao.ArticleResultMap"/>
     </resultMap>
 
 
@@ -38,8 +38,8 @@
         where ID = #{id}
     </delete>
 
-    <select id="selectListByArticleAndPage" resultMap="CommentResultMap">
-        select c.* from comment c
+    <select id="selectListByArticleAndPage" resultMap="CommentWithArticleResultMap">
+        select c.*, a.* from comment c
         left join article a on c.ARTICLE_ID = a.ID
         where c.ARTICLE_ID = #{aid}
         limit ${(pageNo-1)*pageSize},${pageSize};
