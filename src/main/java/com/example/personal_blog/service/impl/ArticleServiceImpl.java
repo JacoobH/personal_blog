@@ -38,4 +38,9 @@ public class ArticleServiceImpl implements IArticleService {
     public List<ArticleModel> getListByPage(int pageNo, int pageSize) {
         return ad.selectListByPage(pageNo,pageSize);
     }
+
+    @Override
+    public List<ArticleModel> getListByTagAndPage(int tid, int pageNo, int pageSize) {
+        return ad.selectListByTagAndPage(tid,pageNo,pageSize);
+    }
 }

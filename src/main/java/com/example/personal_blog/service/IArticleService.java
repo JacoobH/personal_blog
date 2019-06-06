@@ -9,4 +9,6 @@ public interface IArticleService {
     void modify(ArticleModel am);
     void remove(ArticleModel am);
     List<ArticleModel> getListByPage(int pageNo, int pageSize);
+    List<ArticleModel> getListByTagAndPage(int tid, int pageNo, int pageSize);
+
 }

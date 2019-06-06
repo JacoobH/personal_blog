@@ -41,5 +41,11 @@
         select * from article
         limit ${(pageNo-1)*pageSize},${pageSize};
     </select>
+
+    <select id="selectListByTagAndPage" resultMap="ArticleResultMap">
+        select article.* from article inner join article_tag on article.ID = article_tag.AID
+        where TID = #{tid}
+        limit ${(pageNo-1)*pageSize},${pageSize};
+    </select>
 </mapper>
 
