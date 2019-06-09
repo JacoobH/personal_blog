@@ -40,6 +40,11 @@ public class ArticleServiceImpl implements IArticleService {
     }
 
     @Override
+    public ArticleModel getArticleById(int id) {
+        return ad.selectArticleById(id);
+    }
+
+    @Override
     public List<ArticleModel> getListByPage(int pageNo, int pageSize) {
         return ad.selectListByPage(pageNo,pageSize);
     }

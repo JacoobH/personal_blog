@@ -40,6 +40,11 @@ public class ArticleController {
         return as.getPageNumber(pageSize);
     }
 
+    @RequestMapping("/getArticleById")
+    public ArticleModel getArticleById(int id){
+        return as.getArticleById(id);
+    }
+
     @RequestMapping("/getListByPage")
     public List<ArticleModel> getListByPage(int pageNo, int pageSize){
         return as.getListByPage(pageNo, pageSize);

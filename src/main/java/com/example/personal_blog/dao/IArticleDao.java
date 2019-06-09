@@ -13,6 +13,7 @@ public interface IArticleDao {
     void update(ArticleModel am);
     void delete(ArticleModel am);
     int selectPageNumber(int pageSize);
+    ArticleModel selectArticleById(int id);
     List<ArticleModel> selectListByPage(@Param("pageNo") int pageNo, @Param("pageSize") int pageSize);
     List<ArticleModel> selectListByTagAndPage(@Param("tid") int tid, @Param("pageNo") int pageNo, @Param("pageSize") int pageSize);
     //归档时间列表
