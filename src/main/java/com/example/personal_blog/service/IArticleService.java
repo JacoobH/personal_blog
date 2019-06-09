@@ -10,7 +10,7 @@ public interface IArticleService {
     void remove(ArticleModel am);
     int getPageNumber(int pageSize);
     ArticleModel getArticleById(int id);
-    List<ArticleModel> getListByPage(int pageNo, int pageSize);
+    List<ArticleModel> getListByPage(int pageNo, int pageSize, String searchText);
     List<ArticleModel> getListByTagAndPage(int tid, int pageNo, int pageSize);
     List<String> getYearByTime();
     List<ArticleModel> getListByTimeAndPage(String year, int pageNo, int pageSize);

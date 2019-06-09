@@ -39,6 +39,11 @@
 
     <select id="selectListByPage" resultMap="ArticleResultMap">
         select * from article
+        <where>
+            <if test="searchText != null">
+                and title regexp #{searchText}
+            </if>
+        </where>
         order by TIME DESC
         limit ${(pageNo-1)*pageSize},${pageSize};
     </select>
@@ -68,6 +73,7 @@
     <select id="selectPageNumber" resultType="int">
         select ceil(count(ID)/#{pageSize})
         from article
+
     </select>
 </mapper>
 

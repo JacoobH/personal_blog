@@ -46,8 +46,8 @@ public class ArticleController {
     }
 
     @RequestMapping("/getListByPage")
-    public List<ArticleModel> getListByPage(int pageNo, int pageSize){
-        return as.getListByPage(pageNo, pageSize);
+    public List<ArticleModel> getListByPage(int pageNo, int pageSize, String searchText){
+        return as.getListByPage(pageNo, pageSize,searchText);
     }
 
     @RequestMapping("/getListByTagAndPage")
