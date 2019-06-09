@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/tag")
+@CrossOrigin
 public class TagController {
     private static final String TAG = "TagController";
     private ITagService ts;

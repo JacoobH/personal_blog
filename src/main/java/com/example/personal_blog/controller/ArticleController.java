@@ -3,6 +3,7 @@ package com.example.personal_blog.controller;
 import com.example.personal_blog.model.ArticleModel;
 import com.example.personal_blog.service.IArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/article")
+@CrossOrigin
 public class ArticleController {
     private IArticleService as;
 
