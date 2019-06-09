@@ -8,6 +8,7 @@ public interface IArticleService {
     void add(ArticleModel am);
     void modify(ArticleModel am);
     void remove(ArticleModel am);
+    int getPageNumber(int pageSize);
     List<ArticleModel> getListByPage(int pageNo, int pageSize);
     List<ArticleModel> getListByTagAndPage(int tid, int pageNo, int pageSize);
     List<String> getYearByTime();

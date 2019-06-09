@@ -35,6 +35,11 @@ public class ArticleController {
         as.remove(am);
     }
 
+    @RequestMapping("/getPageNumber")
+    public int getPageNumber(int pageSize){
+        return as.getPageNumber(pageSize);
+    }
+
     @RequestMapping("/getListByPage")
     public List<ArticleModel> getListByPage(int pageNo, int pageSize){
         return as.getListByPage(pageNo, pageSize);

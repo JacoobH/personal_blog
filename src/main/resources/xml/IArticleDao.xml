@@ -59,5 +59,10 @@
         where year(TIME) = #{year}
         limit ${(pageNo-1)*pageSize},${pageSize};
     </select>
+
+    <select id="selectPageNumber" resultType="int">
+        select ceil(count(ID)/#{pageSize})
+        from article
+    </select>
 </mapper>
 
