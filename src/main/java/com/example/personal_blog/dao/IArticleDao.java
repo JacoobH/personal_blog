@@ -12,7 +12,7 @@ public interface IArticleDao {
     void insert(ArticleModel am);
     void update(ArticleModel am);
     void delete(ArticleModel am);
-    int selectPageNumber(int pageSize);
+    int selectPageNumber(@Param("pageSize") int pageSize,@Param("searchText") String searchText);
     ArticleModel selectArticleById(int id);
     List<ArticleModel> selectListByPage(@Param("pageNo") int pageNo, @Param("pageSize") int pageSize,@Param("searchText") String searchText);
     List<ArticleModel> selectListByTagAndPage(@Param("tid") int tid, @Param("pageNo") int pageNo, @Param("pageSize") int pageSize);

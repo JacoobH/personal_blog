@@ -73,7 +73,11 @@
     <select id="selectPageNumber" resultType="int">
         select ceil(count(ID)/#{pageSize})
         from article
-
+        <where>
+            <if test="searchText != null">
+                and title regexp #{searchText}
+            </if>
+        </where>
     </select>
 </mapper>
 

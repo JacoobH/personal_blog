@@ -35,8 +35,8 @@ public class ArticleServiceImpl implements IArticleService {
     }
 
     @Override
-    public int getPageNumber(int pageSize) {
-        return ad.selectPageNumber(pageSize);
+    public int getPageNumber(int pageSize,  String searchText) {
+        return ad.selectPageNumber(pageSize, searchText);
     }
 
     @Override

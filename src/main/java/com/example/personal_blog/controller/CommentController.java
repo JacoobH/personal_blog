@@ -4,6 +4,7 @@ import com.example.personal_blog.model.CommentModel;
 import com.example.personal_blog.service.ICommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,17 +22,17 @@ public class CommentController {
     }
 
     @RequestMapping("/add")
-    public void add(CommentModel cm){
+    public void add( @RequestBody CommentModel cm){
         cs.add(cm);
     }
 
     @RequestMapping("/remove")
-    public void remove(CommentModel cm){
+    public void remove( @RequestBody CommentModel cm){
         cs.remove(cm);
     }
 
     @RequestMapping("/modify")
-    public void modify(CommentModel cm){
+    public void modify( @RequestBody CommentModel cm){
         cs.modify(cm);
     }
 

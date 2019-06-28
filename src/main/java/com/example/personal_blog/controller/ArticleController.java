@@ -4,6 +4,7 @@ import com.example.personal_blog.model.ArticleModel;
 import com.example.personal_blog.service.IArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,23 +22,23 @@ public class ArticleController {
     }
 
     @RequestMapping("/add")
-    public void add(ArticleModel am){
+    public void add(@RequestBody ArticleModel am){
         as.add(am);
     }
 
     @RequestMapping("/modify")
-    public void modify(ArticleModel am){
+    public void modify(@RequestBody ArticleModel am){
         as.modify(am);
     }
 
     @RequestMapping("/remove")
-    public void remove(ArticleModel am){
+    public void remove(@RequestBody ArticleModel am){
         as.remove(am);
     }
 
     @RequestMapping("/getPageNumber")
-    public int getPageNumber(int pageSize){
-        return as.getPageNumber(pageSize);
+    public int getPageNumber(int pageSize, String searchText){
+        return as.getPageNumber(pageSize, searchText);
     }
 
     @RequestMapping("/getArticleById")
