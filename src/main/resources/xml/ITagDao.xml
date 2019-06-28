@@ -30,7 +30,7 @@
     </update>
 
     <delete id="delete">
-        delete from tag where ID = #{id};
+        delete from tag where Tag = #{tag};
     </delete>
 
     <select id="isExist" resultType="int">

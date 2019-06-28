@@ -30,12 +30,12 @@ public class TagController {
     }
 
     @RequestMapping("/modify")
-    public void modify(TagModel tm){
+    public void modify(@RequestBody TagModel tm){
         ts.modify(tm);
     }
 
     @RequestMapping("/remove")
-    public void remove(TagModel tm){
+    public void remove(@RequestBody TagModel tm){
         ts.remove(tm);
     }
 
