@@ -22,4 +22,6 @@ public interface ITagDao {
     int selectIdByName(String tagName);
     //根据文章查找标签
     List<TagModel> selectListByArticle(int aid);
+    //得到所有的标签
+    List<TagModel> selectListByAll();
 }

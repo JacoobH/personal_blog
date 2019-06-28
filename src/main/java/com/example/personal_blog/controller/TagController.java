@@ -43,4 +43,9 @@ public class TagController {
     public List<TagModel> getListByArticle(int aid){
         return ts.getListByArticle(aid);
     }
+
+    @RequestMapping("/getListByAll")
+    public List<TagModel> getListByAll(){
+        return ts.getListByAll();
+    }
 }

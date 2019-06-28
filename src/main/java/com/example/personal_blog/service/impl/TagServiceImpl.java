@@ -81,4 +81,9 @@ public class TagServiceImpl implements ITagService {
     public List<TagModel> getListByArticle(int aid) {
         return td.selectListByArticle(aid);
     }
+
+    @Override
+    public List<TagModel> getListByAll() {
+        return td.selectListByAll();
+    }
 }

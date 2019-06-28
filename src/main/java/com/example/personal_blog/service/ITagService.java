@@ -14,4 +14,5 @@ public interface ITagService {
 
     int getIdByName(String tagName);
     List<TagModel> getListByArticle(int aid);
+    List<TagModel> getListByAll();
 }

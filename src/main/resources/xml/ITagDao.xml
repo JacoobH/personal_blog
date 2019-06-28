@@ -50,7 +50,13 @@
 
     <select id="selectListByArticle" resultMap="TagResultMap">
         select tag.* from tag inner join article_tag on tag.ID = article_tag.TID
-        where AID = #{aid};
+        where AID = #{aid}
+        order by TAG;
+    </select>
+
+    <select id="selectListByAll" resultMap="TagResultMap">
+        select * from tag
+        order by TAG;
     </select>
 </mapper>
 
