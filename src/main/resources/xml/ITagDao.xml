@@ -35,7 +35,17 @@
 
     <select id="isExist" resultType="int">
         select count(ID) from tag
-        where ID = #{id};
+        where TAG = #{tag};
+    </select>
+
+    <select id="isRelationExist" resultType="int">
+        select count(*) from article_tag
+        where AID =#{aid} and TID = #{tid};
+    </select>
+
+    <select id="selectIdByName" resultType="int">
+        select ID from tag
+        where TAG = #{tagName}
     </select>
 
     <select id="selectListByArticle" resultMap="TagResultMap">
